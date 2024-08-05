@@ -11,7 +11,8 @@ var generateOtpEmailResult = emailOtpModule.Generate_OTP_Email(userEmail);
 Console.WriteLine(generateOtpEmailResult);
 while (generateOtpEmailResult == EmailStatus.STATUS_EMAIL_INVALID)
 {
-    generateOtpEmailResult = GetEmail();
+    userEmail = GetEmail();
+    generateOtpEmailResult = emailOtpModule.Generate_OTP_Email(userEmail);
 }
 
 if (generateOtpEmailResult == EmailStatus.STATUS_EMAIL_OK)
