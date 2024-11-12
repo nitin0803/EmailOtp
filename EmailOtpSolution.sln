@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailOtp", "EmailOtp\EmailOtp.csproj", "{CD13DDA3-6638-468D-B75A-92D8903C03AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailOtpTest", "EmailOtpTest\EmailOtpTest.csproj", "{4CC94BE7-7D9B-4F9F-BA5D-1079492B8C75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD13DDA3-6638-468D-B75A-92D8903C03AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD13DDA3-6638-468D-B75A-92D8903C03AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD13DDA3-6638-468D-B75A-92D8903C03AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD13DDA3-6638-468D-B75A-92D8903C03AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC94BE7-7D9B-4F9F-BA5D-1079492B8C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC94BE7-7D9B-4F9F-BA5D-1079492B8C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC94BE7-7D9B-4F9F-BA5D-1079492B8C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC94BE7-7D9B-4F9F-BA5D-1079492B8C75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

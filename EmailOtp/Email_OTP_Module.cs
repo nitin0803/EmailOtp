@@ -12,6 +12,17 @@ public class Email_OTP_Module
     private int? currentUserOtp;
     private Stopwatch stopwatch = new();
 
+    private readonly IConsole console;
+    private readonly IRandomGenerator otpGenerator;
+
+    public int? CurrentUserOtp => currentUserOtp;
+
+    public Email_OTP_Module(IConsole console, IRandomGenerator otpGenerator)
+    {
+        this.console = console;
+        this.otpGenerator = otpGenerator;
+    }
+
 
     public void Start()
     {
@@ -31,7 +42,7 @@ public class Email_OTP_Module
             return EmailStatus.STATUS_EMAIL_INVALID;
         }
 
-        currentUserOtp = OtpGenerator.Next(100000, 999999);
+        currentUserOtp = otpGenerator.Generate();
         var body = $"You OTP Code is {currentUserOtp}. The code is valid for 1 minute";
         var result = Send_Email(currentUserEmail, body);
         if (result == EmailStatus.STATUS_EMAIL_FAIL)
@@ -64,10 +75,10 @@ public class Email_OTP_Module
                 break;
             }
 
-            Console.WriteLine("Entered OTP does not match!");
+            console.WriteLine("Entered OTP does not match!");
 
-            Console.WriteLine("Enter new OTP:");
-            inputOtp = Convert.ToInt32(Console.ReadLine());
+            console.WriteLine("Enter new OTP:");
+            inputOtp = Convert.ToInt32(console.ReadLine());
             attempt++;
         }
 
@@ -81,7 +92,7 @@ public class Email_OTP_Module
             Email = email_address,
             Body = email_body
         };
-        Console.WriteLine(email_body);
+        console.WriteLine(email_body);
         stopwatch.Start();
         return EmailStatus.STATUS_EMAIL_OK;
     }

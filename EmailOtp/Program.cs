@@ -2,11 +2,9 @@
 
 using EmailOtp;
 
-var otpModule = new Email_OTP_Module();
-
 Console.WriteLine("Welcome to DSO National Laboratories!");
 var userEmail = GetEmail();
-var emailOtpModule = new Email_OTP_Module();
+var emailOtpModule = new Email_OTP_Module(new ConsoleWrapper(), new OtpGenerator());
 var generateOtpEmailResult = emailOtpModule.Generate_OTP_Email(userEmail);
 Console.WriteLine(generateOtpEmailResult);
 while (generateOtpEmailResult == EmailStatus.STATUS_EMAIL_INVALID)
